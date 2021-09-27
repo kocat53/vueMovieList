@@ -1,9 +1,7 @@
 <template>
     <div class="container-md p-3">
         <header class="d-flex align-items-center">
-            <h1 class="logo me-5">
-                <router-link to="/" class="fs-3">OMDb.<span class="fs-2">com</span></router-link>
-            </h1>
+            <Logo />
             <ul class="nav nav-pills">
                 <li
                     v-for="(item , i) in navi"
@@ -18,7 +16,10 @@
     </div>
 </template>
 <script>
+import Logo from '~/components/Logo'
+
 export default {
+    components:{Logo},
     data(){
         return {
             navi: [
@@ -39,17 +40,3 @@ export default {
     }
 }
 </script>
-<style lang="scss" scoped>
-    @import '~/scss/main';
-    .logo {
-        margin-bottom: 0;
-        
-        > a {
-            text-decoration: none;
-
-            > span {
-                color: $black;
-            }
-        }
-    }
-</style>

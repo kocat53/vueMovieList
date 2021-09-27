@@ -1,5 +1,12 @@
 $primary: #fdc000;
-
+$container-max-widths:(
+    md:704px,
+    lg:924px,
+    xxl:1400px
+);
+select {
+    -webkit-appearance:none;
+}
 @import "../../node_modules/bootstrap/scss/mixins";
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
