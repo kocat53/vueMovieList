@@ -1,5 +1,5 @@
 <template>
-    <footer>
+    <footer id="footer">
         <Logo />
         <a href="#;" target="_blank">PBP</a>
     </footer>
@@ -24,6 +24,7 @@ export default {
         flex-direction: column;
         align-items: center;
         margin-top: 30px;
+        padding-bottom: 30px;
 
         .logo {
             margin-right: 0 !important;

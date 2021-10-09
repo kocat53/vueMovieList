@@ -17,7 +17,8 @@ export default createRouter({
             component: About
         },
         {
-            path : '/movie',
+            // : 를 이용해서 파람스를 셋팅할 수 있음 ex ) : 파람명
+            path : '/movie/:id',
             component: Movie
         },
     ]  
