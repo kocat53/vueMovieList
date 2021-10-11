@@ -6,7 +6,10 @@
                 v-for="(item , i) in navi"
                 :key="i"
                 class="nav-item">
-                <router-link :to="item.href" active-class="active" class="nav-link">
+                <router-link :to="item.href"
+                    active-class="active"
+                    :class="{active : isMatch(item.path)}"
+                    class="nav-link">
                     {{item.name}}
                 </router-link>
             </li>
@@ -27,7 +30,8 @@ export default {
                 },
                 {
                     name:'Movie',
-                    href: '/movie/tt2294629'
+                    href: '/movie/',
+                    path: /^\/movie/
                 },
                 {
                     name:'About',
@@ -35,6 +39,13 @@ export default {
                 }
             ]
         }
-    }
+    },
+    methods: {
+        isMatch(path) {
+            if(!path) return false
+            console.log(this.$route);
+            return path.test(this.$route.fullPath)
+        }
+    },
 }
 </script>

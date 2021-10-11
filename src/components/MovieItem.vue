@@ -1,11 +1,11 @@
 <template>
-    <div class="movie" :title="movie.Title" :style="{backgroundImage: `url(${movie.Poster})`}">
+    <router-link :to="`/movie/${movie.imdbID}`" class="movie" :title="movie.Title" :style="{backgroundImage: `url(${movie.Poster})`}">
         <Loader v-if="imageLoading" :size="1.5" absolute />
         <div class="info">
             <div class="year">{{movie.Year}}</div>
             <strong class="title">{{movie.Title}}</strong>
         </div>
-    </div>
+    </router-link>
 </template>
 
 <script>
@@ -28,6 +28,13 @@ import Loader from '~/components/Loader.vue'
         },
         methods: {
             async init() {
+                const poster = this.movie.Poster
+
+                if (!poster || poster === 'N/A') {
+                    this.imageLoading = false 
+                    return ''
+                }
+
                 await this.$loadImage(this.movie.Poster)
                 this.imageLoading = false
             }
@@ -49,16 +56,26 @@ import Loader from '~/components/Loader.vue'
         background-color: $gray-400;
         background-size: cover;
         overflow: hidden;
+        cursor: pointer;
+
+        &:before, 
+        &:after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            content: '';
+            border-radius: 4px;
+        }
+
+        &:before {
+            border: 1px solid rgba(#000,.09);
+        }
 
         &:hover {
            &:after {
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
                 border: 6px solid $primary;
-                content: '';
            }
         }
 

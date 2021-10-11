@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="inner" :class="{'no-result':!computedMovies.length}">
-            <Loader v-if="loading"/>
+            <Loader v-if="loading" :size="3" absolute/>
             <div v-if="message" class="text-center">
                 <strong class="gray-200">{{ message }}</strong>
             </div>
@@ -52,6 +52,7 @@
     margin-top: 30px;
 
     .inner {
+        position: relative;
         display: flex;
         justify-content: center;
         background-color: #eee;

@@ -84,7 +84,12 @@ export default {
     },
     methods: {
         requestDiffSizeImage(url, size=800) {
+            if(!url || url === 'N/A') {
+                this.imageLoading = false
+                return ''
+            }
             const src = url.replace('SX300',`SX${size}`)
+            // 이미지 로딩 기다리지 않고 바로 반환이 되게 하기위함임
             this.$loadImage(src).then(()=>{
                 this.imageLoading = false
             })
