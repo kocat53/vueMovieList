@@ -1,5 +1,5 @@
 <template>
-   <header id="header" class="d-flex  container-md p-3align-items-center">
+   <header id="header" class="d-flex  container-md p-3 align-items-center">
         <Logo />
         <ul class="nav nav-pills">
             <li
