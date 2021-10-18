@@ -12,5 +12,8 @@ export default {
     components: {
         HeadlineVue, Search, MovieList
     },
+    created(){
+        this.$store.commit('movie/resetMovies')
+    }
 }
 </script>

@@ -34,7 +34,7 @@ export default {
                 },
                 {
                     name: 'number', // 2번 데이터
-                    items: [10,20,30]
+                    items: [10,20,30,40,50]
                 },
                 {
                     name: 'year', // 2번 데이터 TIP : $data를 이용해서 이런식으로도 for문에 접근이 가능하구나
@@ -64,7 +64,6 @@ export default {
 </script>
 <style lang="scss" scoped>
     select {
-   
         flex-shrink: 1;
     }
 </style>

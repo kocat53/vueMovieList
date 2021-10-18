@@ -2,12 +2,14 @@ import axios from 'axios'
 import { identity } from 'lodash'
 import _uniqBy from 'lodash/uniqBy'
 
+const defaultMessage = '영화제목을 입력해주세요.'
+
 export default {
     namespaced : true, // 모듈화로 사용하게 해주는 옵션
     // data 
     state: ()=> ({
         movies : [],
-        message : '영화제목을 입력해주세요.',
+        message : defaultMessage,
         loading : false,
         theMovie: {}
     }), 
@@ -24,6 +26,8 @@ export default {
         },
         resetMovies(state){
             state.movies = []
+            state.message = defaultMessage
+            state.loading = false
         }
     },
     // methods 비동기

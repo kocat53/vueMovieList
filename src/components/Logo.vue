@@ -4,8 +4,6 @@
         </h1>
 </template>
 <style lang="scss" scoped>
-    @import '~/scss/main';
-    
     .logo {
         margin-bottom: 0;
         

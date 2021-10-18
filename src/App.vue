@@ -15,7 +15,6 @@ export default {
 }
 </script>
 <style lang="scss">
-  @import "~/scss/main";
   html,body,#wrap,#app {
     height: 100%;
   }

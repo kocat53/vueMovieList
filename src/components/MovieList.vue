@@ -1,13 +1,13 @@
 <template>
     <div class="container">
-        <div class="inner" :class="{'no-result':!computedMovies.length}">
+        <div class="inner" :class="{'no-result':!movies.length}">
             <Loader v-if="loading" :size="3" absolute/>
             <div v-if="message" class="text-center">
                 <strong class="gray-200">{{ message }}</strong>
             </div>
             <div v-else class="movies">
                 <movie-item 
-                    v-for="item in computedMovies" 
+                    v-for="item in movies" 
                     :key="item.imdbID"
                     :movie="item"
                 ></movie-item>
@@ -17,6 +17,7 @@
 </template>
 
 <script>
+    import { mapState } from 'vuex'
     import MovieItem from '~/components/MovieItem'
     import Loader from '~/components/Loader'
     export default {
@@ -24,30 +25,20 @@
             MovieItem,
             Loader
         },
-        data() {
-            return {
-                movies: []
-            }
-        },
         computed: {
+            ...mapState('movie',[
+                'movies',
+                'message',
+                'loading'
+            ]),
             // movies를 computed로 사용하는 이유
             // => 그냥 쓰면 빈 배열이 들어가기 때문에 store의 액션을 맥인 값이 들어가려면
             // 컴퓨티드 사용해야함
-            computedMovies() {
-                return this.$store.state.movie.movies
-            },
-            message(){
-                return this.$store.state.movie.message
-            },
-            loading(){
-                return this.$store.state.movie.loading
-            }
         },
     }
 </script>
 
 <style lang="scss" scoped>
-@import "~/scss/main";
 .container {
     margin-top: 30px;
 

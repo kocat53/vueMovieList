@@ -13,8 +13,6 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "~/scss/main";
-
     .not_found {
         display: flex;
         flex-direction: column;

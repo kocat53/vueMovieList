@@ -43,7 +43,6 @@ import Loader from '~/components/Loader.vue'
 </script>
 
 <style lang="scss" scoped>
-    @import "~/scss/main";
     .movie {
         position: relative;
         $width: 200px;
