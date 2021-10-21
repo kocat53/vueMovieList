@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { identity } from 'lodash'
 import _uniqBy from 'lodash/uniqBy'
 
 const defaultMessage = '영화제목을 입력해주세요.'

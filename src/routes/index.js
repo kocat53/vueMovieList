@@ -26,8 +26,8 @@ export default createRouter({
             component: Movie
         },
         {
-            path:'/:notFound(.*)',
-            component: Notfound
+            path:'/:pathMatch(.*)*',
+            component: Notfound,
         }
     ]
 })
