@@ -49,7 +49,7 @@ import Loader from '~/components/Loader.vue'
 
         position: relative;
         width: $width;
-        height: $width * 3 / 2;
+        height: math.div($width * 3 , 2);
         margin: 10px;
         border-radius: 4px;
         background-color: $gray-400;
