@@ -1,6 +1,8 @@
 import { asyncFn } from './example'
+import { mount } from '@vue/test-utils'
 import * as example from './example' // example.someThing 과 같이 객체 형태로 쓰려면 이렇게 가져오면 됨
 import 'regenerator-runtime' // 이거 있어야 하네???
+import TestVue from './TestVue'
 
 // 테스트도 오래 걸리면 안됨. 시간을 단축 할 수록 테스트도 좋음 그럴려면 코드를 잘 짜야지 ^ㅁ^?
 // 비동기를 테스트 할때 정상적으로 하는 방법
@@ -30,5 +32,10 @@ describe('비동기 테스트',()=>{
         
         const res = await example.asyncFn()
         expect(res).toBe('끄읕333')
+    })
+
+    test('ㅁㅔ시지 변경하기',() => {
+        const wraper = mount(TestVue)
+        expect(wraper.vm.msg).toBe('wahskd')
     })
 })
