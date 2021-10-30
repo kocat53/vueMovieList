@@ -33,9 +33,4 @@ describe('비동기 테스트',()=>{
         const res = await example.asyncFn()
         expect(res).toBe('끄읕333')
     })
-
-    test('ㅁㅔ시지 변경하기',() => {
-        const wraper = mount(TestVue)
-        expect(wraper.vm.msg).toBe('wahskd')
-    })
 })

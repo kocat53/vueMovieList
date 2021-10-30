@@ -12,8 +12,10 @@ export default {
         loading : false,
         theMovie: {}
     }), 
+
     // computed
     getters: {},
+
     // methods 동기
     // mutations 에서만 state 변경 가능
     mutations: {
@@ -29,6 +31,7 @@ export default {
             state.loading = false
         }
     },
+    
     // methods 비동기
     // 순서 보장 필요 없는것들만 하면 됨
     actions:{
@@ -46,8 +49,8 @@ export default {
                 const { Search , totalResults } = res.data
 
                 commit('updateState',{
-                    // data 객체에 Search 객체 안에 영화 정보가 있는데 거기에 타이틀이랑 imdbID도 있음, 그래서 그 값을 기준으로 중복 제거를 하는거임
-                    // 그러나 21.08.31
+                    // data 객체에 Search 객체 안에 영화 정보가 있는데
+                    // 거기에 타이틀이랑 imdbID도 있음, 그래서 그 값을 기준으로 중복 제거를 하는거임
                     movies: _uniqBy(Search ,'imdbID'),
                 })
                 

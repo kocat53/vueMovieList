@@ -163,7 +163,7 @@ export default {
                 position: relative;
                 $width : 600px;
                 width: $width;
-                height: math.div($width * 3 , 2);
+                height: $width * 3 / 2;
                 background-size: cover;
                 background-position: center;
                 border-radius: 15px;

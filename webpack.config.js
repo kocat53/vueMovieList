@@ -4,6 +4,7 @@ const HtmlPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 const Dotenv = require('dotenv-webpack')
+require("babel-polyfill");
 
 module.exports = {
   resolve: {
@@ -17,7 +18,7 @@ module.exports = {
   },
 
   // 파일을 읽어들이기 시작하는 진입점 설정
-  entry: './src/main.js',
+  entry: ['babel-polyfill','./src/main.js'],
 
   // 결과물(번들)을 반환하는 설정
   output: {
